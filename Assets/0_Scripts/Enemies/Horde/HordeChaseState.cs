@@ -21,6 +21,7 @@ public class HordeChaseState : IState
     
     public void OnUpdate()
     {
+        enemy.rb.velocity = Vector3.zero;
         if (Vector3.Distance(enemy.transform.position, target.position) <= enemy.viewDistance + 3f)
         {
             Vector3 desired = target.transform.position - enemy.transform.position;

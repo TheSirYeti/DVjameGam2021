@@ -22,6 +22,8 @@ public class HordeIdleState : IState
 
     public void OnUpdate()
     {
+        enemy.ApplyForce(Vector3.zero);
+        enemy.rb.velocity = Vector3.zero;
         if (Vector3.Distance(target.position, enemy.transform.position) <= enemy.viewDistance)
         {
             fsm.ChangeState(MachineState.CHASE);

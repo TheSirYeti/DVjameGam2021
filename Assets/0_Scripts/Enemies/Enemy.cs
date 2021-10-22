@@ -10,6 +10,7 @@ public abstract class Enemy : MonoBehaviour, IEntity
     public float speed;
     private Vector3 _velocity;
     public float viewDistance;
+    public Rigidbody rb;
 
     private void Start()
     {

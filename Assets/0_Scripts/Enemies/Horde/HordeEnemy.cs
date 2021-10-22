@@ -22,8 +22,8 @@ public class HordeEnemy : Enemy
 
     private void Update()
     {
+        //ApplyForce(Separation() * separationWeightValue + Align() * alignWeightValue + Cohesion() * cohesionWeightValue);
         fsm.OnUpdate();
-        //ApplyForce(Separation() * separationWeightValue);
     }
 
     public override void TakeDamage()
@@ -55,6 +55,54 @@ public class HordeEnemy : Enemy
 
         Vector3 steering = desired - GetVelocity();
         steering = Vector3.ClampMagnitude(steering, maxForce);
+        return steering;
+    }
+    
+    Vector3 Cohesion()
+    {
+        Vector3 desired = new Vector3();
+        int nearbyBoids = 0;
+
+        foreach (var boid in EnemyManager.instance.GetEnemies())
+        {
+            if (boid != this && Vector3.Distance(boid.transform.position, transform.position) < viewDistance)
+            {
+                desired += boid.transform.position;
+                nearbyBoids++;
+            }
+        }
+        if (nearbyBoids == 0) return desired;
+        desired /= nearbyBoids;
+        desired = desired - transform.position;
+        desired.Normalize();
+        desired *= speed;
+
+        Vector3 steering = desired - GetVelocity();
+        steering = Vector3.ClampMagnitude(steering, maxForce);
+        return steering;
+    }
+
+    Vector3 Align()
+    {
+        Vector3 desired = new Vector3();
+        int nearbyBoids = 0;
+        foreach (var boid in EnemyManager.instance.GetEnemies())
+        {
+            if (boid != this && Vector3.Distance(boid.transform.position, transform.position) < viewDistance)
+            {
+                desired += boid.GetVelocity();
+                nearbyBoids++;
+            }
+        }
+        if (nearbyBoids == 0) 
+            return Vector3.zero;
+        
+        desired = desired / nearbyBoids;
+        desired.Normalize();
+        desired *= speed;
+
+        Vector3 steering = Vector3.ClampMagnitude(desired - GetVelocity(), maxForce);
+
         return steering;
     }
 }
