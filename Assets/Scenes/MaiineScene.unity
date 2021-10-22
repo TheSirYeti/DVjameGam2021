@@ -339,6 +339,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1371256695}
+  VclampUp: 15
+  VclampDown: -25
+  HclampDer: 15
+  HclampIzq: -15
 --- !u!1 &1222572289
 GameObject:
   m_ObjectHideFlags: 0

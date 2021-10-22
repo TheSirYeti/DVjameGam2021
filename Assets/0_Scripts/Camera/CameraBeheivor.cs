@@ -6,15 +6,45 @@ public class CameraBeheivor : MonoBehaviour
 {
     [SerializeField] private Transform _player;
 
+    [SerializeField] private float VclampUp;
+    [SerializeField] private float VclampDown;
 
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float HclampDer;
+    [SerializeField] private float HclampIzq;
 
-    // Update is called once per frame
+    private Vector3 movement;
+
     void Update()
     {
-        transform.position = new Vector3(_player.position.x, transform.position.y, _player.position.z - 5.5f);
+        movement = new Vector3(_player.position.x, transform.position.y, _player.position.z - 5.5f);
+
+       
+        if(_player.position.x > HclampDer)
+        {
+            movement.x = HclampDer;
+            transform.position = movement;
+        }
+        else if(_player.position.x < HclampIzq)
+        {
+            movement.x = HclampIzq;
+            transform.position = movement;
+        }
+
+        if (_player.position.z - 5.5f > VclampUp)
+        {
+            movement.z = VclampUp;
+            transform.position = movement;
+        }
+        else if (_player.position.z - 5.5f < VclampDown)
+        {
+            movement.z = VclampDown;
+            transform.position = movement;
+        }
+
+        if (_player.position.x < HclampDer && _player.position.x > HclampIzq)
+        {
+            transform.position = movement;
+        }
+
     }
 }
