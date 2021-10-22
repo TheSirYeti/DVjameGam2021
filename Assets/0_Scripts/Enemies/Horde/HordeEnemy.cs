@@ -14,8 +14,6 @@ public class HordeEnemy : Enemy
     
     private void Start()
     {
-        EnemyManager.instance.AddEnemy(this);
-        
         fsm = new FiniteStateMachine();
         fsm.AddState(MachineState.CHASE, new HordeChaseState(this, fsm, target));
         fsm.AddState(MachineState.IDLE, new HordeIdleState(this, fsm, target));
@@ -25,7 +23,7 @@ public class HordeEnemy : Enemy
     private void Update()
     {
         fsm.OnUpdate();
-        ApplyForce(Separation() * separationWeightValue);
+        //ApplyForce(Separation() * separationWeightValue);
     }
 
     public override void TakeDamage()

@@ -21,6 +21,11 @@ public class EnemyManager : MonoBehaviour
         enemies.Add(enemy);
     }
 
+    public void RemoveEnemy(Enemy enemy)
+    {
+        enemies.Remove(enemy);
+    }
+    
     public List<Enemy> GetEnemies()
     {
         return enemies;
