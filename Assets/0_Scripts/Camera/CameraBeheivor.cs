@@ -14,28 +14,36 @@ public class CameraBeheivor : MonoBehaviour
 
     private Vector3 movement;
 
+    private bool _isBuilding = false;
+
     void Update()
     {
-        movement = new Vector3(_player.position.x, transform.position.y, _player.position.z - 5.5f);
+        if (_isBuilding == false)
+            Follow();
 
-       
-        if(_player.position.x > HclampDer)
+    }
+
+    private void Follow()
+    {
+        movement = new Vector3(_player.position.x, transform.position.y, _player.position.z - 7f);
+
+        if (_player.position.x > HclampDer)
         {
             movement.x = HclampDer;
             transform.position = movement;
         }
-        else if(_player.position.x < HclampIzq)
+        else if (_player.position.x < HclampIzq)
         {
             movement.x = HclampIzq;
             transform.position = movement;
         }
 
-        if (_player.position.z - 5.5f > VclampUp)
+        if (_player.position.z - 7f > VclampUp)
         {
             movement.z = VclampUp;
             transform.position = movement;
         }
-        else if (_player.position.z - 5.5f < VclampDown)
+        else if (_player.position.z - 7f < VclampDown)
         {
             movement.z = VclampDown;
             transform.position = movement;
@@ -45,6 +53,17 @@ public class CameraBeheivor : MonoBehaviour
         {
             transform.position = movement;
         }
+    }
 
+    public void ActiveBuildingMode(Vector3 newCameraPosition)
+    {
+        _isBuilding = true;
+        transform.position += newCameraPosition;
+    }
+
+    public void DesactivateBuildingMode(Vector3 newCameraPosition)
+    {
+        _isBuilding = false;
+        transform.position -= newCameraPosition;
     }
 }

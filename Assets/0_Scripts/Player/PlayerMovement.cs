@@ -17,11 +17,14 @@ public class PlayerMovement : MonoBehaviour
     Vector2 mousePos = new Vector2();
     Vector3 point = new Vector3();
 
-
+    private bool canMove = true;
     void Update()
     {
-        Movement();
-        Rotation();
+        if (canMove)
+        {
+            Movement();
+            Rotation();
+        }
     }
 
     private void Movement()
@@ -52,5 +55,10 @@ public class PlayerMovement : MonoBehaviour
         point.y = 1;
 
         transform.LookAt(point);
+    }
+
+    public void ChangeMovementState(bool movementState)
+    {
+        canMove = movementState;
     }
 }
