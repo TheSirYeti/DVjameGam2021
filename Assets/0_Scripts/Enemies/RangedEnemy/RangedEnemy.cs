@@ -33,7 +33,7 @@ public class RangedEnemy : Enemy
         Debug.Log("DISPARO");
         var bullet = Instantiate(bulletPrefab);
         bullet.transform.position = transform.position;
-        bullet.transform.forward = target.transform.position;
+        bullet.transform.forward = new Vector3(target.transform.position.x, 0, target.transform.position.z);
         bullet.transform.LookAt(target);
     }
 }
