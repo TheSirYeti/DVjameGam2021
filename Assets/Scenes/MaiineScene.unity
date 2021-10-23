@@ -837,7 +837,7 @@ GameObject:
   - component: {fileID: 512090111}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Plataforma3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -850,7 +850,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512090109}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76, y: -0.5, z: 0}
+  m_LocalPosition: {x: 77.1, y: -0.5, z: 0}
   m_LocalScale: {x: 50, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 70157016}
@@ -1164,9 +1164,10 @@ GameObject:
   - component: {fileID: 803940857}
   - component: {fileID: 803940856}
   - component: {fileID: 803940855}
+  - component: {fileID: 803940858}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Plataform1
+  m_TagString: Plataforma2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1244,6 +1245,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803940853}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &803940858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803940853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd0a29b13c9f784dabfb5bcb0b4d896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _myButton: {fileID: 1685339093}
+  _myRightPlataform: Plataforma3
+  _myLeftPlataform: 
+  _myUpPlataform: Plataforma1
+  _myDownPlataform: Plataforma4
 --- !u!1 &887747970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,7 +1320,7 @@ GameObject:
   - component: {fileID: 1153240570}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Plataforma5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1621,7 +1639,7 @@ GameObject:
   - component: {fileID: 1315698209}
   m_Layer: 0
   m_Name: Cube (6)
-  m_TagString: Untagged
+  m_TagString: Plataforma6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2035,7 +2053,7 @@ GameObject:
   - component: {fileID: 1500860950}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Plataforma1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2146,8 +2164,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 694848994}
-  player: {fileID: 1371256690}
+  _myPlataformMovement: {fileID: 803940858}
+  _playerMovement: {fileID: 1371256690}
   _AddVectorCameraPosition: {x: -2, y: 30, z: -20}
+  _player: {fileID: 1371256689}
+  _myPlataform: {fileID: 803940853}
+  _camera: {fileID: 694848990}
 --- !u!65 &1685339095
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2507,7 +2529,7 @@ GameObject:
   - component: {fileID: 1924389428}
   m_Layer: 0
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: Plataforma7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2639,7 +2661,7 @@ GameObject:
   - component: {fileID: 1953277249}
   m_Layer: 0
   m_Name: Cube (5)
-  m_TagString: Untagged
+  m_TagString: Plataforma4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

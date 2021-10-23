@@ -20,7 +20,6 @@ public class CameraBeheivor : MonoBehaviour
     {
         if (_isBuilding == false)
             Follow();
-
     }
 
     private void Follow()
