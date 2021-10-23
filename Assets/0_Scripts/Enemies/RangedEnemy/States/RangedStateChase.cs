@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PopUpStateChase : IState
+public class RangedStateChase : IState
 {
     private Enemy enemy;
     private FiniteStateMachine fsm;
     private Transform target;
 
-    public PopUpStateChase(Enemy enemy, FiniteStateMachine fsm, Transform target)
+    public RangedStateChase(Enemy enemy, FiniteStateMachine fsm, Transform target)
     {
         this.enemy = enemy;
         this.fsm = fsm;
         this.target = target;
     }
-    
+
     public void OnStart()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void OnUpdate()
@@ -25,12 +25,13 @@ public class PopUpStateChase : IState
         if (Vector3.Distance(enemy.transform.position, target.position) <= enemy.viewDistance + 3f)
         {
             enemy.CanAttack();
-        } 
+            Debug.Log("Ataco");
+        }
         else fsm.ChangeState(MachineState.IDLE);
     }
 
     public void OnExit()
     {
-        throw new System.NotImplementedException();
+        
     }
 }

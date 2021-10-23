@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PopUpStateIdle : IState
+public class RangedStateIdle : IState
 {
-    private FiniteStateMachine fsm;
     private Enemy enemy;
+    private FiniteStateMachine fsm;
     private Transform target;
 
-    public PopUpStateIdle(Enemy enemy, FiniteStateMachine fsm, Transform target)
+    public RangedStateIdle(Enemy enemy, FiniteStateMachine fsm, Transform target)
     {
         this.enemy = enemy;
         this.fsm = fsm;
@@ -22,10 +22,10 @@ public class PopUpStateIdle : IState
 
     public void OnUpdate()
     {
-        if (Vector3.Distance(enemy.transform.position, target.transform.position) <= enemy.viewDistance)
+        if (Vector3.Distance(enemy.transform.position, target.position) <= enemy.viewDistance)
         {
             fsm.ChangeState(MachineState.CHASE);
-            Debug.Log("dou");
+            Debug.Log("En Rango");
         }
     }
 
