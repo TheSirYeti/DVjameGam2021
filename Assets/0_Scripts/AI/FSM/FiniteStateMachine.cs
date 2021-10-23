@@ -32,5 +32,6 @@ public class FiniteStateMachine
 public enum MachineState
 {
     CHASE,
-    IDLE
+    IDLE,
+    ATTACK
 }

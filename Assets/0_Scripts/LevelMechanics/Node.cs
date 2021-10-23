@@ -24,10 +24,12 @@ public class Node : MonoBehaviour
             EventManager.Trigger("ConnectNode", nodeType);
             Debug.Log("Conecto!");
             isConnected = true;
+            nodes.equippedNode.isConnected = false;
         }
         else { 
             Debug.Log("No conecto!");
             isGrabbed = false;
+            nodes.equippedNode.isGrabbed = false;
         } 
         nodes.equippedNode = null;
     }

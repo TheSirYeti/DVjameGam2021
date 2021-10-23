@@ -6,31 +6,30 @@ using UnityEngine;
 public class HordeEnemy : Enemy
 {
     public FiniteStateMachine fsm;
-    public Transform target;
     public float separationDistance;
     public float separationWeightValue;
     public float alignWeightValue;
     public float cohesionWeightValue;
-    
+
     private void Start()
     {
         fsm = new FiniteStateMachine();
         fsm.AddState(MachineState.CHASE, new HordeChaseState(this, fsm, target));
         fsm.AddState(MachineState.IDLE, new HordeIdleState(this, fsm, target));
+        fsm.AddState(MachineState.ATTACK, new HordeAttackState(this, fsm));
         fsm.ChangeState(MachineState.CHASE);
     }
 
     private void Update()
     {
-        //ApplyForce(Separation() * separationWeightValue + Align() * alignWeightValue + Cohesion() * cohesionWeightValue);
         fsm.OnUpdate();
     }
 
-    public override void TakeDamage()
+    public override void Attack()
     {
         
     }
-    
+
     public Vector3 Separation()
     {
         Vector3 desired = new Vector3();

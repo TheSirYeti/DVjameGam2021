@@ -117,6 +117,7 @@ MonoBehaviour:
   separationWeightValue: 2
   alignWeightValue: 2
   cohesionWeightValue: 2
+  attackCooldown: 2
 --- !u!54 &2761633410142362435
 Rigidbody:
   m_ObjectHideFlags: 0
