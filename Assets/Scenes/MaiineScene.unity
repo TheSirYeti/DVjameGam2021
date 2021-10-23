@@ -2928,3 +2928,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668b54fdf668d284098921fb075dda06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 0
+  _minClampY: 0
+  _minClampX: 0
+  _maxClampY: 0
+  _maxClampX: 0

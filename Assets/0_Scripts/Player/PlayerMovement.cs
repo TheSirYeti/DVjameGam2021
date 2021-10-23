@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         mousePos.x = Input.mousePosition.x;
         mousePos.y = Input.mousePosition.y;
 
-        point = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 10));
+        point = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 0));
         point.y = 1;
 
         transform.LookAt(point);
