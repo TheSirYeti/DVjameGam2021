@@ -48,10 +48,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Rotation()
     {
-        mousePos.x = Input.mousePosition.x;
-        mousePos.y = Input.mousePosition.y;
+        //mousePos.x = Input.mousePosition.x;
+        //mousePos.y = Input.mousePosition.y;
 
-        point = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 0));
+        point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         point.y = 1;
 
         transform.LookAt(point);

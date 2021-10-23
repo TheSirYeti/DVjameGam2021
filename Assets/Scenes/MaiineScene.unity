@@ -159,6 +159,9 @@ MonoBehaviour:
   viewDistance: 15
   rb: {fileID: 55563479}
   target: {fileID: 1371256695}
+  attackCooldown: 0
+  timer: 0
+  canAttack: 1
   separationDistance: 2
   separationWeightValue: 2
   alignWeightValue: 2
@@ -329,6 +332,9 @@ MonoBehaviour:
   viewDistance: 15
   rb: {fileID: 144801104}
   target: {fileID: 1371256695}
+  attackCooldown: 0
+  timer: 0
+  canAttack: 1
   separationDistance: 2
   separationWeightValue: 2
   alignWeightValue: 2
@@ -492,6 +498,9 @@ MonoBehaviour:
   viewDistance: 15
   rb: {fileID: 347361555}
   target: {fileID: 1371256695}
+  attackCooldown: 0
+  timer: 0
+  canAttack: 1
   separationDistance: 2
   separationWeightValue: 2
   alignWeightValue: 2
@@ -717,6 +726,9 @@ MonoBehaviour:
   viewDistance: 15
   rb: {fileID: 421116551}
   target: {fileID: 1371256695}
+  attackCooldown: 0
+  timer: 0
+  canAttack: 1
   separationDistance: 2
   separationWeightValue: 2
   alignWeightValue: 2
@@ -1043,6 +1055,9 @@ MonoBehaviour:
   viewDistance: 15
   rb: {fileID: 758621794}
   target: {fileID: 1371256695}
+  attackCooldown: 0
+  timer: 0
+  canAttack: 1
   separationDistance: 2
   separationWeightValue: 2
   alignWeightValue: 2
@@ -1495,6 +1510,9 @@ MonoBehaviour:
   viewDistance: 15
   rb: {fileID: 1289587654}
   target: {fileID: 1371256695}
+  attackCooldown: 0
+  timer: 0
+  canAttack: 1
   separationDistance: 2
   separationWeightValue: 2
   alignWeightValue: 2
@@ -1906,6 +1924,9 @@ MonoBehaviour:
   viewDistance: 15
   rb: {fileID: 1399671449}
   target: {fileID: 1371256695}
+  attackCooldown: 0
+  timer: 0
+  canAttack: 1
   separationDistance: 2
   separationWeightValue: 2
   alignWeightValue: 2
@@ -2239,6 +2260,9 @@ MonoBehaviour:
   viewDistance: 15
   rb: {fileID: 1721812067}
   target: {fileID: 1371256695}
+  attackCooldown: 0
+  timer: 0
+  canAttack: 1
   separationDistance: 2
   separationWeightValue: 2
   alignWeightValue: 2
@@ -2372,6 +2396,9 @@ MonoBehaviour:
   viewDistance: 15
   rb: {fileID: 1784703855}
   target: {fileID: 1371256695}
+  attackCooldown: 0
+  timer: 0
+  canAttack: 1
   separationDistance: 2
   separationWeightValue: 2
   alignWeightValue: 2
@@ -2729,6 +2756,9 @@ MonoBehaviour:
   viewDistance: 15
   rb: {fileID: 1961243215}
   target: {fileID: 1371256695}
+  attackCooldown: 0
+  timer: 0
+  canAttack: 1
   separationDistance: 2
   separationWeightValue: 2
   alignWeightValue: 2
@@ -2842,7 +2872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &2034736708
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2928,8 +2958,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668b54fdf668d284098921fb075dda06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0
-  _minClampY: 0
-  _minClampX: 0
-  _maxClampY: 0
-  _maxClampX: 0
+  _speed: 0.5
+  _minClampY: -8
+  _minClampX: -15
+  _maxClampY: 12
+  _maxClampX: 15

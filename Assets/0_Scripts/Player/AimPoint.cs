@@ -12,12 +12,12 @@ public class AimPoint : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        /*Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;*/
     }
     void Update()
     {
-        _mouseX += Input.GetAxis("Mouse X");
+        /*_mouseX += Input.GetAxis("Mouse X");
         _mouseY += Input.GetAxis("Mouse Y");
 
         if (_mouseY > _maxClampY)
@@ -31,6 +31,8 @@ public class AimPoint : MonoBehaviour
             _mouseX = _minClampX;
 
 
-        transform.position = new Vector3(_mouseX, 1, _mouseY) * Time.deltaTime * _speed;
+        transform.position = new Vector3(_mouseX, 1, _mouseY) * _speed;*/
+
+
     }
 }
