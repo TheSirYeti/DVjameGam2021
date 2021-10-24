@@ -6,15 +6,14 @@ public class CameraBeheivor : MonoBehaviour
 {
     [SerializeField] private Transform _player;
 
-    [SerializeField] private float VclampUp;
-    [SerializeField] private float VclampDown;
-
-    [SerializeField] private float HclampDer;
-    [SerializeField] private float HclampIzq;
-
     private Vector3 movement;
 
     private bool _isBuilding = false;
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
 
     void Update()
     {
@@ -25,33 +24,7 @@ public class CameraBeheivor : MonoBehaviour
     private void Follow()
     {
         movement = new Vector3(_player.position.x, transform.position.y, _player.position.z - 7f);
-
-        if (_player.position.x > HclampDer)
-        {
-            movement.x = HclampDer;
-            transform.position = movement;
-        }
-        else if (_player.position.x < HclampIzq)
-        {
-            movement.x = HclampIzq;
-            transform.position = movement;
-        }
-
-        if (_player.position.z - 7f > VclampUp)
-        {
-            movement.z = VclampUp;
-            transform.position = movement;
-        }
-        else if (_player.position.z - 7f < VclampDown)
-        {
-            movement.z = VclampDown;
-            transform.position = movement;
-        }
-
-        if (_player.position.x < HclampDer && _player.position.x > HclampIzq)
-        {
-            transform.position = movement;
-        }
+        transform.position = movement;
     }
 
     public void ActiveBuildingMode(Vector3 newCameraPosition)

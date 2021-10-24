@@ -13,9 +13,11 @@ public class PlayerMovement : MonoBehaviour
     private float _movementMagnitud;
     private Vector3 _movementVector;
 
-    //VectoresMouse
-    Vector2 mousePos = new Vector2();
-    Vector3 point = new Vector3();
+    [SerializeField] LayerMask _layerMask;
+
+    //VectoresMouse   
+    Vector3 pointHit;
+    Vector3 mousePos;
 
     private bool canMove = true;
     void Update()
@@ -48,13 +50,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Rotation()
     {
-        //mousePos.x = Input.mousePosition.x;
-        //mousePos.y = Input.mousePosition.y;
+        mousePos = Input.mousePosition;
+        pointHit = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 10));
 
-        point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        point.y = 1;
+        Vector3 VectorRaycast = pointHit - Camera.main.transform.position;
 
-        transform.LookAt(point);
+        RaycastHit hit;
+        Physics.Raycast(Camera.main.transform.position, VectorRaycast, out hit, Mathf.Infinity);
+        Debug.DrawLine(Camera.main.transform.position, VectorRaycast, Color.red);
+
+        transform.LookAt(new Vector3 (hit.point.x, 1, hit.point.z));
     }
 
     public void ChangeMovementState(bool movementState)
