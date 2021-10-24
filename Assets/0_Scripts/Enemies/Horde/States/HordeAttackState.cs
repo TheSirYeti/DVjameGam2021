@@ -16,7 +16,7 @@ public class HordeAttackState : IState
     public void OnStart()
     {
         //Do Attack
-        enemy.GetComponent<HordeEnemy>().Attack();
+        enemy.GetComponent<HordeEnemy>().CanAttack();
         fsm.ChangeState(MachineState.IDLE);
     }
 

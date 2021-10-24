@@ -22,6 +22,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/0_Scripts/Player/PlayerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0_Scripts/Enemies/TrojanEnemy/States/TrojanStateChase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0_Scripts/AI/FSM/FiniteStateMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0_Scripts/Sounds/SoundManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -88,7 +89,7 @@
       <workItem from="1634905867223" duration="23168000" />
       <workItem from="1635014280077" duration="2269000" />
       <workItem from="1635021271260" duration="11657000" />
-      <workItem from="1635093385042" duration="3147000" />
+      <workItem from="1635093385042" duration="8438000" />
     </task>
     <servers />
   </component>

@@ -12,6 +12,7 @@ public class PopUpEnemy : Enemy
 
     void Start()
     {
+        EnemyManager.instance.AddEnemy(this);
         fsm = new FiniteStateMachine();
         fsm.AddState(MachineState.IDLE, new PopUpStateIdle(this, fsm, target));
         fsm.AddState(MachineState.CHASE, new PopUpStateChase(this, fsm, target));

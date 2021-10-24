@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 2761633410142362447}
   - component: {fileID: 2761633410142362446}
   - component: {fileID: 2761633410142362435}
+  - component: {fileID: 8722746122997154381}
   m_Layer: 0
   m_Name: TestHordeEnemy
-  m_TagString: Untagged
+  m_TagString: enemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,11 +114,14 @@ MonoBehaviour:
   viewDistance: 10
   rb: {fileID: 2761633410142362435}
   target: {fileID: 0}
+  attackCooldown: 4
+  timer: 0
+  canAttack: 1
   separationDistance: 2
   separationWeightValue: 2
   alignWeightValue: 2
   cohesionWeightValue: 2
-  attackCooldown: 2
+  attackCollider: {fileID: 8722746122997154381}
 --- !u!54 &2761633410142362435
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -134,3 +138,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!135 &8722746122997154381
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761633410142362445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5801463
+  m_Center: {x: 0, y: 0, z: 0.5}

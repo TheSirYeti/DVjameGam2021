@@ -13,6 +13,7 @@ public class MiniTrojan : Enemy
     public Material tickMaterial;
     void Start()
     {
+        EnemyManager.instance.AddEnemy(this);
         originalMaterial = GetComponent<MeshRenderer>().material;
         StartCoroutine(MakeExplosion());
     }

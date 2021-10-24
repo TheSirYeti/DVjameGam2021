@@ -11,8 +11,10 @@ public class HordeEnemy : Enemy
     public float alignWeightValue;
     public float cohesionWeightValue;
 
+    public Collider attackCollider;
     private void Start()
     {
+        EnemyManager.instance.AddEnemy(this);
         fsm = new FiniteStateMachine();
         fsm.AddState(MachineState.CHASE, new HordeChaseState(this, fsm, target));
         fsm.AddState(MachineState.IDLE, new HordeIdleState(this, fsm, target));
@@ -21,15 +23,29 @@ public class HordeEnemy : Enemy
     }
 
     private void Update()
-    {
+    {  
+        timer -= Time.fixedDeltaTime;
+        if (timer <= Time.fixedDeltaTime)
+        {
+            timer = 0f;
+            canAttack = true;
+        }
+        
         fsm.OnUpdate();
     }
 
     public override void Attack()
     {
-        
+        StartCoroutine(AttackTrigger());
     }
 
+    IEnumerator AttackTrigger()
+    {
+        attackCollider.enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        attackCollider.enabled = false;
+    }
+    
     public Vector3 Separation()
     {
         Vector3 desired = new Vector3();
@@ -103,5 +119,27 @@ public class HordeEnemy : Enemy
         Vector3 steering = Vector3.ClampMagnitude(desired - GetVelocity(), maxForce);
 
         return steering;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("hit");
+            EventManager.Trigger("SetPlayerHP", -1f);
+        }
+        
+        if (other.gameObject.tag == "Bullet")
+        {
+            Debug.Log("me pego");
+            hp--;
+            Destroy(other.gameObject);
+        }
+
+        if (hp == 0)
+        {
+            EnemyManager.instance.RemoveEnemy(this);
+            Destroy(gameObject);
+        }
     }
 }

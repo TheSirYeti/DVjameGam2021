@@ -12,6 +12,7 @@ TagManager:
   - Plataforma5
   - Plataforma6
   - Plataforma7
+  - enemyAttack
   layers:
   - Default
   - TransparentFX

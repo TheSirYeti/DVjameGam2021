@@ -13,6 +13,7 @@ public class TrojanEnemy : Enemy
 
     private void Start()
     {
+        EnemyManager.instance.AddEnemy(this);
         fsm = new FiniteStateMachine();
         fsm.AddState(MachineState.IDLE, new TrojanStateIdle(this, fsm, target));
         fsm.AddState(MachineState.CHASE, new TrojanStateChase(this, fsm, target));

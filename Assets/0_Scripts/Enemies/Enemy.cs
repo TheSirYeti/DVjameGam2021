@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [SerializeField] float hp;
+    public float hp;
     public float maxForce;
     public float speed;
     private Vector3 _velocity;
@@ -61,6 +61,7 @@ public abstract class Enemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullet")
         {
+            Debug.Log("me pego");
             hp--;
             Destroy(other.gameObject);
         }

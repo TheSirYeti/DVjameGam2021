@@ -10,6 +10,7 @@ public class RangedEnemy : Enemy
 
     void Start()
     {
+        EnemyManager.instance.AddEnemy(this);
         fsm = new FiniteStateMachine();
         fsm.AddState(MachineState.IDLE, new RangedStateIdle(this, fsm, target));
         fsm.AddState(MachineState.CHASE, new RangedStateChase(this, fsm, target));
