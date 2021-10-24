@@ -22,7 +22,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (other.gameObject.tag == "enemyAttack")
         {
-            EventManager.Trigger("SetPlayerHP", -1);
+            EventManager.Trigger("SetPlayerHP", -1f);
         }
     }
 }

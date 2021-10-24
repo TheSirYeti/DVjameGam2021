@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float _horizontal, _vertical;
     private float _movementMagnitud;
     private Vector3 _movementVector;
+    [SerializeField] private float playerHeight;
 
     [SerializeField] LayerMask _layerMask;
 
@@ -59,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         Physics.Raycast(Camera.main.transform.position, VectorRaycast, out hit, Mathf.Infinity);
         Debug.DrawLine(Camera.main.transform.position, VectorRaycast, Color.red);
 
-        transform.LookAt(new Vector3 (hit.point.x, 1, hit.point.z));
+        transform.LookAt(new Vector3 (hit.point.x, playerHeight, hit.point.z));
     }
 
     public void ChangeMovementState(bool movementState)
