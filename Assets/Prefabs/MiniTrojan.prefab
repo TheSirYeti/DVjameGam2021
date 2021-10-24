@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 2761633410142362433}
   - component: {fileID: 2761633410142362432}
   - component: {fileID: 2761633410142362447}
-  - component: {fileID: 2761633410142362446}
   - component: {fileID: 2761633410142362435}
+  - component: {fileID: 4188553037845004795}
   m_Layer: 0
-  m_Name: TestHordeEnemy 1
+  m_Name: MiniTrojan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2761633410142362445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.03, y: 3.42, z: -16}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,31 +95,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2761633410142362446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2761633410142362445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b39a95f76c97f83468c4c99b9407a6bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 3
-  maxForce: 3
-  speed: 7
-  viewDistance: 10
-  rb: {fileID: 2761633410142362435}
-  target: {fileID: 0}
-  attackCooldown: 2
-  timer: 0
-  canAttack: 1
-  separationDistance: 2
-  separationWeightValue: 2
-  alignWeightValue: 2
-  cohesionWeightValue: 2
 --- !u!54 &2761633410142362435
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -136,3 +111,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &4188553037845004795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761633410142362445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f55abdd8d6b3449aaf32865615ebec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 3
+  maxForce: 3
+  speed: 6
+  viewDistance: 10
+  rb: {fileID: 2761633410142362435}
+  target: {fileID: 0}
+  attackCooldown: 0
+  timer: 0
+  canAttack: 1
+  timeToExplode: 0.5
+  explosionPrefab: {fileID: 663227448008567416, guid: 4d999cb354f019040a952e4b0684c841,
+    type: 3}
+  canMove: 1
+  originalMaterial: {fileID: 2100000, guid: 925a56cd81b120a4eb3ed3f9a03af94d, type: 2}
+  tickMaterial: {fileID: 2100000, guid: f3e56b5b66920cf4cb2dd43cb2bcd91c, type: 2}
