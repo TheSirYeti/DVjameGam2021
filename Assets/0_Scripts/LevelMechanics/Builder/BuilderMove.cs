@@ -41,7 +41,6 @@ public class BuilderMove : MonoBehaviour
         if(other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E) && _isMoving == false)
         {
             _player.transform.parent = _myPlataform.transform;
-            transform.parent = _myPlataform.transform;
             _camera.transform.parent = _myPlataform.transform;
             Debug.Log("Accione");
             _isMoving = true;
@@ -52,7 +51,6 @@ public class BuilderMove : MonoBehaviour
         if(other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Escape) && _isMoving == true)
         {
             _player.transform.parent = null;
-            transform.parent = null;
             _camera.transform.parent = null;
             Debug.Log("AccioneApagado");
             _isMoving = false;

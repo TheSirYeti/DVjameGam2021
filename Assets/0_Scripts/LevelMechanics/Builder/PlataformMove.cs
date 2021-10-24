@@ -11,16 +11,32 @@ public class PlataformMove : MonoBehaviour
     [SerializeField] private string _myUpPlataform;
     [SerializeField] private string _myDownPlataform;
 
+    [SerializeField] private Transform _upRight;
+    [SerializeField] private Transform _upLeft;
+    [SerializeField] private Transform _downRight;
+    [SerializeField] private Transform _downLeft;
+
     public void MoveRight()
     {
         transform.position += Vector3.right;
 
-        RaycastHit hit;
-        Physics.Raycast(transform.position, transform.right, out hit, 30);
+        RaycastHit hitUp;
+        Physics.Raycast(_upRight.position, transform.right, out hitUp, 0.5f);
 
-        if(hit.collider.tag == _myRightPlataform)
+        RaycastHit hitDown;
+        Physics.Raycast(_downRight.position, transform.right, out hitDown, 0.5f);
+
+        if (hitUp.collider == hitDown.collider && hitUp.collider.tag == _myRightPlataform)
         {
-            hit.collider.transform.parent = transform;
+            GameObject other = hitUp.collider.gameObject;
+
+            while (other.transform.parent != null)
+            {
+                other = other.transform.parent.gameObject;
+            }
+
+            other.transform.parent = transform;
+            other.gameObject.GetComponent<PlataformMove>().DestroyMyButton();
         }
     }
 
@@ -28,12 +44,23 @@ public class PlataformMove : MonoBehaviour
     {
         transform.position += Vector3.left;
 
-        RaycastHit hit;
-        Physics.Raycast(transform.position, transform.right * -1, out hit, 30);
+        RaycastHit hitUp;
+        Physics.Raycast(_upLeft.position, transform.right * -1, out hitUp, 0.5f);
 
-        if (hit.collider.tag == _myLeftPlataform)
+        RaycastHit hitDown;
+        Physics.Raycast(_downLeft.position, transform.right * -1, out hitDown, 0.5f);
+
+        if (hitUp.collider == hitDown.collider && hitUp.collider.tag == _myLeftPlataform)
         {
-            hit.collider.transform.parent = transform;
+            GameObject other = hitUp.collider.gameObject;
+
+            while (other.transform.parent != null)
+            {
+                other = other.transform.parent.gameObject;
+            }
+
+            other.transform.parent = transform;
+            other.gameObject.GetComponent<PlataformMove>().DestroyMyButton();
         }
     }
 
@@ -61,5 +88,10 @@ public class PlataformMove : MonoBehaviour
         {
             hit.collider.transform.parent = transform;
         }
+    }
+
+    public void DestroyMyButton()
+    {
+        Destroy(_myButton.gameObject);
     }
 }
