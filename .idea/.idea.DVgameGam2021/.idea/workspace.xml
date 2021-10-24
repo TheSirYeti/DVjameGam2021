@@ -16,6 +16,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/0_Scripts/Enemies/TrojanEnemy/States/TrojanStateChase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0_Scripts/AI/FSM/FiniteStateMachine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/0_Scripts/Sounds/SoundManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0_Scripts/Enemies/RangedEnemy/EnemyBullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0_Scripts/LevelMechanics/Node.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/0_Scripts/Enemies/PopUp Spammer/PopUpEnemy.cs" root0="FORCE_HIGHLIGHTING" />
@@ -76,7 +77,7 @@
       <updated>1634905851239</updated>
       <workItem from="1634905867223" duration="23168000" />
       <workItem from="1635014280077" duration="2269000" />
-      <workItem from="1635021271260" duration="10025000" />
+      <workItem from="1635021271260" duration="11646000" />
     </task>
     <servers />
   </component>
